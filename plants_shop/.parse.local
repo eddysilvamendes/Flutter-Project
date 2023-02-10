@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "plants_shop"
+    },
+    "plants_shop": {
+      "applicationId": "3aYiFEpcodmJitJjCNrkOL56kHAIvXhoYEin2tLA"
+    }
+  }
+}
