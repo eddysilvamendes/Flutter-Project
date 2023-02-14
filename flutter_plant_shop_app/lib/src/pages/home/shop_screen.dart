@@ -198,6 +198,7 @@ class _ShopScreenState extends State<ShopScreen>
               unselectedLabelColor: Colors.grey.withOpacity(0.6),
               labelPadding: const EdgeInsets.symmetric(horizontal: 35.0),
               isScrollable: true,
+              
               tabs: const [
                 Tab(
                   child: Text(
@@ -264,6 +265,7 @@ class _ShopScreenState extends State<ShopScreen>
                 },
               ),
             ),
+           
             //Descriptions
             Padding(
               padding: const EdgeInsets.all(30.0),

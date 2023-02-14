@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_application/src/config/product_bindig.dart';
+import 'package:flutter_web_application/src/layout/layout.dart';
+import 'package:flutter_web_application/src/pages/404/error.dart';
+import 'package:flutter_web_application/src/pages/authtentication/authentication.dart';
 import 'package:flutter_web_application/src/pages/clients/clients.dart';
-import 'package:flutter_web_application/src/pages/drivers/drivers.dart';
+import 'package:flutter_web_application/src/pages/product/drivers.dart';
 import 'package:flutter_web_application/src/pages/overview/overview.dart';
 import 'package:flutter_web_application/src/routing/pages.dart';
+import 'package:get/get.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case overViewPageRoute:
       return _getPageRoute(const OverviewScreen());
-    case driversPageRoute:
+    case productPageRoute:
       return _getPageRoute(const DriversScreen());
-    case clientsPageRoute:
+    case contactPageRoute:
       return _getPageRoute(const ClientsScreen());
     default:
       return _getPageRoute(const OverviewScreen());
@@ -19,4 +24,24 @@ Route<dynamic> generateRoute(RouteSettings settings) {
 
 PageRoute _getPageRoute(Widget child) {
   return MaterialPageRoute(builder: (context) => child);
+}
+
+abstract class AppPages {
+  static final pages = <GetPage>[
+    GetPage(
+      name: rootRoute,
+      page: () => SiteLayout(),
+    ),
+    GetPage(
+        name: authenticationPageRoute,
+        page: () => AuthenticationScreen(),
+        bindings: [
+          ProductBinding(),
+        ]),
+    GetPage(
+      name: '/not-found',
+      page: () => const PageNotFound(),
+      transition: Transition.fadeIn,
+    )
+  ];
 }

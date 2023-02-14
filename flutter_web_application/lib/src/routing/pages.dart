@@ -2,18 +2,18 @@ const rootRoute = "/";
 
 List sideMenuItems = [
   overViewPageRoute,
-  driversPageRoute,
-  clientsPageRoute,
+  productPageRoute,
+  contactPageRoute,
   authenticationPageRoute,
 ];
 const overviewPageDisplayName = "Overview";
 const overViewPageRoute = "/overview";
 
-const driversPageDisplayName = "Drivers";
-const driversPageRoute = "/drivers";
+const productPageDisplayName = "Products";
+const productPageRoute = "/products";
 
-const clientsPageDisplayName = "Clients";
-const clientsPageRoute = "/clients";
+const contactPageDisplayName = "Contacts";
+const contactPageRoute = "/contact";
 
 const authenticationPageDisplayName = "Log out";
 const authenticationPageRoute = "/auth";
@@ -27,7 +27,7 @@ class MenuItem {
 
 List<MenuItem> sideMenuItemRoutes = [
   MenuItem(overviewPageDisplayName, overViewPageRoute),
-  MenuItem(driversPageDisplayName, driversPageRoute),
-  MenuItem(clientsPageDisplayName, clientsPageRoute),
+  MenuItem(productPageDisplayName, productPageRoute),
+  MenuItem(contactPageDisplayName, contactPageRoute),
   MenuItem(authenticationPageDisplayName, authenticationPageRoute),
 ];

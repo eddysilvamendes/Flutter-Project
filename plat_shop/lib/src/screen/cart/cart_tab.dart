@@ -4,7 +4,6 @@ import 'package:merceariaonline/src/config/constom_colors.dart';
 import 'package:merceariaonline/src/controller/cart_controller.dart';
 import 'package:merceariaonline/src/screen/cart/components/cart_tile.dart';
 import 'package:merceariaonline/src/services/utils_services.dart';
-import 'package:merceariaonline/src/config/app_data.dart' as appData;
 
 class CartTab extends StatefulWidget {
   const CartTab({Key? key}) : super(key: key);
@@ -15,13 +14,6 @@ class CartTab extends StatefulWidget {
 
 class _CartTabState extends State<CartTab> {
   final UtilsServices utilsServices = UtilsServices();
-  double cartTotalPrice() {
-    double total = 0;
-    for (var item in appData.cartitem) {
-      total += item.totalPrice();
-    }
-    return total;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +96,7 @@ class _CartTabState extends State<CartTab> {
                     builder: (cartController) {
                       return ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: CustomColors.customSwatchColor,
+                          backgroundColor: CustomColors.customSwatchColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18),
                           ),

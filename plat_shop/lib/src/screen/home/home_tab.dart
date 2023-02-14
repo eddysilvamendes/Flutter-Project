@@ -3,7 +3,7 @@ import 'package:add_to_cart_animation/add_to_cart_icon.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:merceariaonline/src/config/app_data.dart' as appData;
+
 import 'package:merceariaonline/src/config/constom_colors.dart';
 import 'package:merceariaonline/src/controller/cart_controller.dart';
 import 'package:merceariaonline/src/controller/home_controller.dart';
@@ -186,7 +186,7 @@ class _HomeTabState extends State<HomeTab> {
                       : ListView(
                           scrollDirection: Axis.horizontal,
                           children: List.generate(
-                            appData.categories.length,
+                            homeController.allCategories.length,
                             (index) => Container(
                               alignment: Alignment.center,
                               margin: const EdgeInsets.only(right: 12),

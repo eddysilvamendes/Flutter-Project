@@ -1,8 +1,9 @@
-import 'package:merceariaonline/src/constants/endpoints.dart';
-import 'package:merceariaonline/src/models/user_model.dart';
-import 'package:merceariaonline/src/repository/auth_errors.dart' as auth_error;
-import 'package:merceariaonline/src/result/auth_result.dart';
-import 'package:merceariaonline/src/services/http_manager.dart';
+import 'package:flutter_web_application/src/constants/endpoints.dart';
+import 'package:flutter_web_application/src/models/user_model.dart';
+import 'package:flutter_web_application/src/result/auth_result.dart';
+import 'package:flutter_web_application/src/services/http_manager.dart';
+import 'package:flutter_web_application/src/repository/auth_errors.dart'
+    as auth_error;
 
 UserModel user = UserModel();
 
