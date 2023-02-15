@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_application/src/config/product_bindig.dart';
 import 'package:flutter_web_application/src/layout/layout.dart';
 import 'package:flutter_web_application/src/pages/404/error.dart';
 import 'package:flutter_web_application/src/pages/authtentication/authentication.dart';
@@ -33,11 +32,9 @@ abstract class AppPages {
       page: () => SiteLayout(),
     ),
     GetPage(
-        name: authenticationPageRoute,
-        page: () => AuthenticationScreen(),
-        bindings: [
-          ProductBinding(),
-        ]),
+      name: authenticationPageRoute,
+      page: () => AuthenticationScreen(),
+    ),
     GetPage(
       name: '/not-found',
       page: () => const PageNotFound(),

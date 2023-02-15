@@ -31,10 +31,14 @@ Parse.Cloud.define("create_product",async (request)=>{
 	
 	  const product = new Product();
 	  product.set("title",request.params.title);
+	 // product.set("picture",request.params.picture);
+	  product.set("unit",request.params.unit);
 	  product.set("price",request.params.price);
 	  product.set("description",request.params.description);
 	  product.set("stock",request.params.stock);
 	  product.set("isSelling",request.params.isActive);
+	  
+	 
 	  product.set("category",category);
 	  const savedProduct = await product.save(null,{useMasterKey:true});
 	 return savedProduct.id;

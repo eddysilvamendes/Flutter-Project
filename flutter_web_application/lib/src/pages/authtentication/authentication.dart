@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_application/src/conntroller/auth_controller.dart';
+import 'package:flutter_web_application/src/controller/auth_controller.dart';
 import 'package:flutter_web_application/src/constants/style.dart';
 import 'package:flutter_web_application/src/services/utils_services.dart';
 import 'package:flutter_web_application/src/services/validators.dart';

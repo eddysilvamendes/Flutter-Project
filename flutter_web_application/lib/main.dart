@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_application/src/conntroller/auth_controller.dart';
+import 'package:flutter_web_application/src/controller/auth_controller.dart';
 import 'package:flutter_web_application/src/constants/style.dart';
-import 'package:flutter_web_application/src/controllers/navigation_controller.dart';
+import 'package:flutter_web_application/src/controller/category_controller.dart';
+import 'package:flutter_web_application/src/controller/navigation_controller.dart';
+import 'package:flutter_web_application/src/controller/prodcutController.dart';
 import 'package:flutter_web_application/src/pages/404/error.dart';
 import 'package:flutter_web_application/src/routing/pages.dart';
 import 'package:flutter_web_application/src/routing/router.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_web_application/src/controllers/menu_controller.dart';
+import 'package:flutter_web_application/src/controller/menu_controller.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(AuthController());
   Get.put(SideMenuController());
   Get.put(NavigationController());
+  Get.put(CategoryController());
+  Get.put(ProductController());
   runApp(const MyApp());
 }
 
