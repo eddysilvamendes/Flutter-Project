@@ -4,6 +4,7 @@ import 'package:flutter_web_application/src/controller/category_controller.dart'
 import 'package:flutter_web_application/src/controller/prodcutController.dart';
 import 'package:flutter_web_application/src/constants/style.dart';
 import 'package:flutter_web_application/src/models/item_model.dart';
+import 'package:flutter_web_application/src/services/validators.dart';
 import 'package:flutter_web_application/src/widgets/custom_text.dart';
 import 'package:flutter_web_application/src/widgets/custon_text_field.dart';
 import 'package:get/get.dart';
@@ -42,6 +43,7 @@ class MyTextForm extends GetView<ProductController> {
                 label: 'Title',
                 icon: Icons.title,
                 controller: titleController,
+                validator: titleValidator,
               ),
             ),
             const SizedBox(width: 20),
@@ -56,6 +58,7 @@ class MyTextForm extends GetView<ProductController> {
                       icon: Icons.monetization_on_outlined,
                       textInputType: TextInputType.number,
                       controller: priceController,
+                      validator: priceValidator,
                     ),
                   ),
                   const SizedBox(width: 20),
@@ -65,6 +68,7 @@ class MyTextForm extends GetView<ProductController> {
                       icon: Icons.show_chart_rounded,
                       textInputType: TextInputType.number,
                       controller: quantityController,
+                      validator: quantityValidator,
                     ),
                   ),
                 ],
@@ -206,14 +210,15 @@ class MyTextForm extends GetView<ProductController> {
                   ),
                   elevation: 2,
                 ),
-                onPressed: () {
+                onPressed: () async {
                   FocusScope.of(context).unfocus();
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
                     controller.createProduct(
                       product: ItemModel(
                         description: descriptionController.text,
-                        imgUrl: '',
+                        imgUrl:
+                            'https://www.vuescript.com/wp-content/uploads/2018/11/Show-Loader-During-Image-Loading-vue-load-image.png',
                         isActive: controller.isSelling.value,
                         itemName: titleController.text,
                         price: double.parse(priceController.text),
@@ -223,7 +228,9 @@ class MyTextForm extends GetView<ProductController> {
                       ),
                     );
                   }
+
                   print('Created');
+                  Navigator.pop(context);
                 },
                 child: const CustomText(
                   text: "Login",

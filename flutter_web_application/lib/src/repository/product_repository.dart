@@ -21,4 +21,18 @@ class ProductRepository {
       return ProductResult.error("Não foi possiver registrar");
     }
   }
+
+  Future<ProductResult<ItemModel>> getAllProducts() async {
+    final result = await _httpManager.restRequest(
+        url: EndPoint.getProduct, method: HttpMethod.post);
+    if (result['result'] != null) {
+      List<ItemModel> data = (List<Map<String, dynamic>>.from(result['result']))
+          .map(ItemModel.fromJson)
+          .toList();
+      return ProductResult<ItemModel>.getSuccess(data);
+    } else {
+      return ProductResult.error(
+          "Ocorreu um erro inesperado ao recuperar os Productos");
+    }
+  }
 }

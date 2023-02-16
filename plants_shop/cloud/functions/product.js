@@ -10,6 +10,8 @@ function formatProduct(productJson){
 		price: productJson.price,
 		unit: productJson.unit,
 		picture: productJson.picture!=null ? productJson.picture.url : null,
+		stock:productJson.stock,
+		isActive: productJson.isSelling,
 		category: {
 			title:productJson.category.title,
 			id:productJson.category.objectId,

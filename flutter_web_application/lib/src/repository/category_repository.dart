@@ -5,6 +5,7 @@ import 'package:flutter_web_application/src/services/http_manager.dart';
 
 class CategoryRepository {
   final HttpManager _httpManager = HttpManager();
+
   Future<CategoryResult<CategoryModel>> getAllCategories() async {
     final result = await _httpManager.restRequest(
       url: EndPoint.getCategory,

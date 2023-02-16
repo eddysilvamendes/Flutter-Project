@@ -34,6 +34,26 @@ String? phoneValidator(String? phone) {
   if (phone.length < 7 || !phone.isPhoneNumber) {
     return 'Insira um numero valido';
   }
+  return null;
+}
 
+String? titleValidator(String? title) {
+  if (title == null || title.isEmpty) {
+    return "Insira o titulo";
+  }
+  return null;
+}
+
+String? priceValidator(String? price) {
+  if (price == null || price.isEmpty) {
+    return "Price tem de ser preenchido";
+  }
+  return null;
+}
+
+String? quantityValidator(String? quantity) {
+  if (quantity == null || quantity.isEmpty) {
+    return "Price tem de ser preenchido";
+  }
   return null;
 }

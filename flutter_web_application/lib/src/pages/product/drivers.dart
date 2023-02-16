@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_application/src/constants/controllers.dart';
 import 'package:flutter_web_application/src/helpers/responsiveness.dart';
 import 'package:flutter_web_application/src/pages/product/widgets/form.dart';
+import 'package:flutter_web_application/src/pages/product/widgets/product_grid_view.dart';
 import 'package:flutter_web_application/src/widgets/custom_text.dart';
 import 'package:get/get.dart';
 
@@ -29,9 +30,10 @@ class DriversScreen extends StatelessWidget {
         ),
         Expanded(
           child: ListView(
-            children: [
+            children: const [
               //DriversTable(),
-              MyTextForm(),
+              //MyTextForm(),
+              ProductGridViewPage(),
             ],
           ),
         ),
