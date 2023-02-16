@@ -18,6 +18,9 @@ const contactPageRoute = "/contact";
 const authenticationPageDisplayName = "Log out";
 const authenticationPageRoute = "/auth";
 
+const categoryPageDisplayName = "Category";
+const categoryPageRoute = "/category";
+
 class MenuItem {
   final String name;
   final String route;
@@ -29,5 +32,6 @@ List<MenuItem> sideMenuItemRoutes = [
   MenuItem(overviewPageDisplayName, overViewPageRoute),
   MenuItem(productPageDisplayName, productPageRoute),
   MenuItem(contactPageDisplayName, contactPageRoute),
+  MenuItem(categoryPageDisplayName, categoryPageRoute),
   MenuItem(authenticationPageDisplayName, authenticationPageRoute),
 ];

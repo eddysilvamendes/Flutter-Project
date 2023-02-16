@@ -15,7 +15,7 @@ ItemModel _$ItemModelFromJson(Map<String, dynamic> json) => ItemModel(
       id: json['id'] as String? ?? '',
       stock: (json['stock'] as num?)?.toDouble(),
       isActive: json['isActive'] as bool?,
-      // categoryId: json['categoryId'] as String?,
+      categoryId: json['categoryId'] as String?,
     );
 
 Map<String, dynamic> _$ItemModelToJson(ItemModel instance) => <String, dynamic>{

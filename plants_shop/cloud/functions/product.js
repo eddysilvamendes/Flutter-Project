@@ -79,16 +79,5 @@ Parse.Cloud.define('get-product-list', async(request) => {
 	});
 });
 
-//Lista de categorias desponivei
-Parse.Cloud.define('get-category-list', async (request)=>{
-	const queryCategories = new Parse.Query(Category);
-	const resultCategories = await queryCategories.find({useMasterKey:true}); 
-	return resultCategories.map(function(c){
-		c = c.toJSON();
-		return {
-			id: c.objectId,
-			title: c.title,
-		}
-	});
-});
+
 

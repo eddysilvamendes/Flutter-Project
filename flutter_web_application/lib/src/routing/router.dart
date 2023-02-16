@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_application/src/layout/layout.dart';
 import 'package:flutter_web_application/src/pages/404/error.dart';
 import 'package:flutter_web_application/src/pages/authtentication/authentication.dart';
+import 'package:flutter_web_application/src/pages/category/category.dart';
 import 'package:flutter_web_application/src/pages/clients/clients.dart';
 import 'package:flutter_web_application/src/pages/product/drivers.dart';
 import 'package:flutter_web_application/src/pages/overview/overview.dart';
@@ -16,6 +17,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(const DriversScreen());
     case contactPageRoute:
       return _getPageRoute(const ClientsScreen());
+    case categoryPageRoute:
+      return _getPageRoute(const CategoryPage());
     default:
       return _getPageRoute(const OverviewScreen());
   }
@@ -39,6 +42,6 @@ abstract class AppPages {
       name: '/not-found',
       page: () => const PageNotFound(),
       transition: Transition.fadeIn,
-    )
+    ),
   ];
 }

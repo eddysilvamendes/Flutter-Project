@@ -17,19 +17,19 @@ class ItemModel {
   double? stock;
   bool? isActive;
   String? categoryId;
-  List<CategoryModel>? category;
+  //List<CategoryModel>? category;
 
-  ItemModel(
-      {this.description,
-      this.imgUrl,
-      this.itemName,
-      this.price,
-      this.unit,
-      this.id = '',
-      this.stock,
-      this.isActive,
-      this.categoryId,
-      this.category});
+  ItemModel({
+    this.description,
+    this.imgUrl,
+    this.itemName,
+    this.price,
+    this.unit,
+    this.id = '',
+    this.stock,
+    this.isActive,
+    this.categoryId,
+  });
 
   factory ItemModel.fromJson(Map<String, dynamic> json) =>
       _$ItemModelFromJson(json);
@@ -38,6 +38,6 @@ class ItemModel {
 
   @override
   String toString() {
-    return 'ItemModel(id: $id, itemName: $itemName, imgUrl: $imgUrl, unit: $unit, price: $price, description: $description, isActive:$isActive, stock:$stock, categoryID:$categoryId, category:$category)';
+    return 'ItemModel(id: $id, itemName: $itemName, imgUrl: $imgUrl, unit: $unit, price: $price, description: $description, isActive:$isActive, stock:$stock, categoryID:$categoryId)';
   }
 }
