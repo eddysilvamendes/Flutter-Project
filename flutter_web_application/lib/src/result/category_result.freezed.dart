@@ -20,18 +20,21 @@ mixin _$CategoryResult<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(List<T> data) success,
     required TResult Function(String message) error,
+    required TResult Function(T data) Isuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<T> data)? success,
     TResult? Function(String message)? error,
+    TResult? Function(T data)? Isuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<T> data)? success,
     TResult Function(String message)? error,
+    TResult Function(T data)? Isuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$CategoryResult<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(ISuccess<T> value) Isuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(ISuccess<T> value)? Isuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(ISuccess<T> value)? Isuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -146,6 +152,7 @@ class _$Success<T> implements Success<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(List<T> data) success,
     required TResult Function(String message) error,
+    required TResult Function(T data) Isuccess,
   }) {
     return success(data);
   }
@@ -155,6 +162,7 @@ class _$Success<T> implements Success<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<T> data)? success,
     TResult? Function(String message)? error,
+    TResult? Function(T data)? Isuccess,
   }) {
     return success?.call(data);
   }
@@ -164,6 +172,7 @@ class _$Success<T> implements Success<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<T> data)? success,
     TResult Function(String message)? error,
+    TResult Function(T data)? Isuccess,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -177,6 +186,7 @@ class _$Success<T> implements Success<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(ISuccess<T> value) Isuccess,
   }) {
     return success(this);
   }
@@ -186,6 +196,7 @@ class _$Success<T> implements Success<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(ISuccess<T> value)? Isuccess,
   }) {
     return success?.call(this);
   }
@@ -195,6 +206,7 @@ class _$Success<T> implements Success<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(ISuccess<T> value)? Isuccess,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -277,6 +289,7 @@ class _$Error<T> implements Error<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(List<T> data) success,
     required TResult Function(String message) error,
+    required TResult Function(T data) Isuccess,
   }) {
     return error(message);
   }
@@ -286,6 +299,7 @@ class _$Error<T> implements Error<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<T> data)? success,
     TResult? Function(String message)? error,
+    TResult? Function(T data)? Isuccess,
   }) {
     return error?.call(message);
   }
@@ -295,6 +309,7 @@ class _$Error<T> implements Error<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<T> data)? success,
     TResult Function(String message)? error,
+    TResult Function(T data)? Isuccess,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -308,6 +323,7 @@ class _$Error<T> implements Error<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(ISuccess<T> value) Isuccess,
   }) {
     return error(this);
   }
@@ -317,6 +333,7 @@ class _$Error<T> implements Error<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(ISuccess<T> value)? Isuccess,
   }) {
     return error?.call(this);
   }
@@ -326,6 +343,7 @@ class _$Error<T> implements Error<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(ISuccess<T> value)? Isuccess,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -341,5 +359,145 @@ abstract class Error<T> implements CategoryResult<T> {
   String get message;
   @JsonKey(ignore: true)
   _$$ErrorCopyWith<T, _$Error<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ISuccessCopyWith<T, $Res> {
+  factory _$$ISuccessCopyWith(
+          _$ISuccess<T> value, $Res Function(_$ISuccess<T>) then) =
+      __$$ISuccessCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$ISuccessCopyWithImpl<T, $Res>
+    extends _$CategoryResultCopyWithImpl<T, $Res, _$ISuccess<T>>
+    implements _$$ISuccessCopyWith<T, $Res> {
+  __$$ISuccessCopyWithImpl(
+      _$ISuccess<T> _value, $Res Function(_$ISuccess<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$ISuccess<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ISuccess<T> implements ISuccess<T> {
+  _$ISuccess(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'CategoryResult<$T>.Isuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ISuccess<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ISuccessCopyWith<T, _$ISuccess<T>> get copyWith =>
+      __$$ISuccessCopyWithImpl<T, _$ISuccess<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<T> data) success,
+    required TResult Function(String message) error,
+    required TResult Function(T data) Isuccess,
+  }) {
+    return Isuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<T> data)? success,
+    TResult? Function(String message)? error,
+    TResult? Function(T data)? Isuccess,
+  }) {
+    return Isuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<T> data)? success,
+    TResult Function(String message)? error,
+    TResult Function(T data)? Isuccess,
+    required TResult orElse(),
+  }) {
+    if (Isuccess != null) {
+      return Isuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(ISuccess<T> value) Isuccess,
+  }) {
+    return Isuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(ISuccess<T> value)? Isuccess,
+  }) {
+    return Isuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(ISuccess<T> value)? Isuccess,
+    required TResult orElse(),
+  }) {
+    if (Isuccess != null) {
+      return Isuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ISuccess<T> implements CategoryResult<T> {
+  factory ISuccess(final T data) = _$ISuccess<T>;
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$ISuccessCopyWith<T, _$ISuccess<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

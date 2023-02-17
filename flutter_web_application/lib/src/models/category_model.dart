@@ -6,17 +6,13 @@ part 'category_model.g.dart';
 @JsonSerializable()
 class CategoryModel {
   String title;
-  String id;
+  String? id;
   bool? isActive;
 
   @JsonKey(defaultValue: 0)
-  int pagination;
+  int? pagination;
 
-  CategoryModel(
-      {required this.title,
-      required this.id,
-      required this.pagination,
-      this.isActive});
+  CategoryModel({required this.title, this.id, this.pagination, this.isActive});
 
   factory CategoryModel.fromJson(Map<String, dynamic> json) =>
       _$CategoryModelFromJson(json);

@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter_web_application/src/models/category_model.dart';
 import 'package:flutter_web_application/src/repository/category_repository.dart';
 import 'package:flutter_web_application/src/result/category_result.dart';
@@ -10,6 +12,9 @@ class CategoryController extends GetxController {
   final utilServices = UtilsServices();
   CategoryModel? currentCategory;
   bool isCategoryLoading = false;
+  RxBool isActive = true.obs;
+  RxBool isLoading = false.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -21,6 +26,10 @@ class CategoryController extends GetxController {
     isCategoryLoading = value;
 
     update();
+  }
+
+  changeSwitch(bool value) {
+    isActive.value = value;
   }
 
   Future<void> getAllCategories() async {
@@ -42,6 +51,25 @@ class CategoryController extends GetxController {
           isError: true,
         );
       },
+      Isuccess: (data) {},
+    );
+  }
+
+  Future<void> createCategory({required CategoryModel category}) async {
+    isLoading.value = true;
+    CategoryResult result = await categoryRepository.createCategory(category);
+    print('Result is: ${result.toString()}');
+    isLoading.value = false;
+    result.when(
+      Isuccess: (item) async {
+        item = item;
+        await getAllCategories();
+        update();
+      },
+      error: (message) {
+        print('Error at inserting');
+      },
+      success: (data) {},
     );
   }
 }

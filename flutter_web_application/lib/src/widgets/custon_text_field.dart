@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 
 class CustomTextField extends StatefulWidget {
   final IconData? icon;
-  final String label;
+  final String? label;
   final List<TextInputFormatter>? inputFormatters;
   final bool isSecret;
   final String? initialValue;
@@ -18,7 +18,7 @@ class CustomTextField extends StatefulWidget {
   const CustomTextField({
     Key? key,
     this.icon,
-    required this.label,
+    this.label,
     this.isSecret = false,
     this.inputFormatters,
     this.initialValue,

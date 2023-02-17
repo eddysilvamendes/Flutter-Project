@@ -5,4 +5,5 @@ part 'category_result.freezed.dart';
 class CategoryResult<T> with _$CategoryResult<T> {
   factory CategoryResult.success(List<T> data) = Success;
   factory CategoryResult.error(String message) = Error;
+  factory CategoryResult.Isuccess(T data) = ISuccess;
 }

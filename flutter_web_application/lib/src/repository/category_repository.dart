@@ -23,4 +23,19 @@ class CategoryRepository {
           "Ocorreu um erro inesperado ao recuperar as categorias");
     }
   }
+
+  Future<CategoryResult> createCategory(CategoryModel categoryModel) async {
+    print('Json: ${categoryModel.toJson().toString()}');
+    final result = await _httpManager.restRequest(
+        url: EndPoint.createCategory,
+        method: HttpMethod.post,
+        body: categoryModel.toJson());
+    if (result['result'] != null) {
+      //utilsServices.showToast(message: 'New Credit Card!');
+      print('Inserted');
+      return CategoryResult<String>.Isuccess(result['result']);
+    } else {
+      return CategoryResult.error("Não foi possiver registrar");
+    }
+  }
 }

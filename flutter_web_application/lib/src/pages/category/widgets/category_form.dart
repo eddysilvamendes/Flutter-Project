@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_application/src/controller/category_controller.dart';
 import 'package:flutter_web_application/src/constants/style.dart';
+import 'package:flutter_web_application/src/models/category_model.dart';
 import 'package:flutter_web_application/src/services/validators.dart';
 import 'package:flutter_web_application/src/widgets/custom_text.dart';
 import 'package:flutter_web_application/src/widgets/custon_text_field.dart';
@@ -44,8 +45,6 @@ class MyCategoryForm extends GetView<CategoryController> {
               ),
             ),
             const SizedBox(width: 20),
-
-            /*
             Obx(
               () => Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +52,7 @@ class MyCategoryForm extends GetView<CategoryController> {
                   const Text('Is Activate'),
                   Switch(
                     // This bool value toggles the switch.
-                    value: controller.isSelling.value,
+                    value: controller.isActive.value,
                     activeColor: Colors.green,
                     onChanged: (bool value) {
                       controller.changeSwitch(value);
@@ -61,7 +60,7 @@ class MyCategoryForm extends GetView<CategoryController> {
                   ),
                 ],
               ),
-            ),*/
+            ),
             const SizedBox(height: 20),
             SizedBox(
               width: width / 2,
@@ -80,6 +79,12 @@ class MyCategoryForm extends GetView<CategoryController> {
                   FocusScope.of(context).unfocus();
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
+                    controller.createCategory(
+                      category: CategoryModel(
+                        title: titleController.text,
+                        isActive: controller.isActive.value,
+                      ),
+                    );
                   }
 
                   print('Created');
