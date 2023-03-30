@@ -16,6 +16,11 @@ class CategoryScreen extends StatelessWidget {
         ),
         body: const Categories(),
         floatingActionButton: FloatingActionButton(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(50),
+            ),
+          ),
           child: const Icon(Icons.add),
           onPressed: () {
             showModalBottomSheet(

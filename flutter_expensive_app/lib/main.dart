@@ -3,7 +3,6 @@ import 'package:flutter_expensive_app/src/db/database_provider.dart';
 import 'package:flutter_expensive_app/src/screen/category/category_screen.dart';
 import 'package:flutter_expensive_app/src/screen/expenses/expenses_screen.dart';
 import 'package:flutter_expensive_app/src/screen/expenses/transaction/all_expenses.dart';
-import 'package:flutter_expensive_app/src/utils/app_color.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -26,13 +25,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         primarySwatch: Colors.blue,
-        appBarTheme: AppBarTheme(
-          backgroundColor: AppColor.mainColor,
-          titleTextStyle: const TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-          ),
-        ),
       ),
       initialRoute: CategoryScreen.name,
       routes: {

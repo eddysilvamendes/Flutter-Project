@@ -5,7 +5,6 @@ import 'package:flutter_expensive_app/src/constants/icons.dart';
 import 'package:flutter_expensive_app/src/db/database_provider.dart';
 import 'package:flutter_expensive_app/src/models/expense.dart';
 import 'package:flutter_expensive_app/src/screen/expenses/widget/custom_text_form.dart';
-import 'package:flutter_expensive_app/src/utils/app_color.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -105,11 +104,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
             const SizedBox(
               height: 20.0,
             ),
-            ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColor.buttonColor,
-                elevation: 5.0,
-              ),
+            ElevatedButton(
               onPressed: () {
                 if (_title.text != null && _amount.text != null) {
                   final file = Expense(
@@ -123,8 +118,7 @@ class _ExpenseFormState extends State<ExpenseForm> {
                   Navigator.of(context).pop();
                 }
               },
-              label: const Text('Add Expense'),
-              icon: const Icon(Icons.add),
+              child: const Text('Add Expense'),
             )
           ],
         ),
