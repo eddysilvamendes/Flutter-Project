@@ -44,7 +44,7 @@ class PizzaMainCard extends StatelessWidget {
         SizedBox(height: 10),
         //Pizza
         Expanded(
-          flex: 3,
+          flex: 4,
           child: PizzaDetails(),
         ),
         //Ingredients
